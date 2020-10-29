@@ -84,15 +84,6 @@ public class FXMLDocumentController implements Initializable {
         
     @FXML
     private Label dbStatusText;
-    
-    //@FXML
-    //private Label loginStatus;
-    
-    //@FXML
-   // private TextField username;
-    
-   // @FXML
-   // private TextField password;
 
     @FXML
     private TextField textFieldOne;
@@ -157,24 +148,6 @@ public class FXMLDocumentController implements Initializable {
     
     int index = -1;
 
-    /*@FXML
-    private void login(ActionEvent event) throws IOException {
-        
-        if (username.getText().equals("admin") && password.getText().equals("admin")) {
-            ((Node)(event.getSource())).getScene().getWindow().hide();
-            Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-            Stage primaryStage = new Stage();
-            Scene scene = new Scene(root);
-            
-            primaryStage.setScene(scene);
-            primaryStage.setResizable(false);
-            primaryStage.show();
-            
-         } else {
-            loginStatus.setText("Failed !");
-         } 
-        
-    }*/
      @FXML
     private void addRecord(ActionEvent event) throws SQLException {
 
