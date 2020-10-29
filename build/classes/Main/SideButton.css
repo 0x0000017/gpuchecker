@@ -1,0 +1,21 @@
+.pane {
+    -fx-background-color:  #efefef;
+}
+
+.button {
+    -fx-text-fill: #484848;
+    -fx-font-family: "";
+    -fx-font-weight: bolder;
+    -fx-background-color:   transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-border-color: none;
+    /*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );*/
+    -fx-font-size: 18;
+}
+
+.button:hover {
+    /*-fx-background-color: white;*/
+    -fx-text-fill: #1e88e5;
+}
+
+

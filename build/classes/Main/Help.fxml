@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="337.0" prefWidth="234.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.FXMLDocumentController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="151.0" text="Manufacturers List:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="okButton" layoutX="181.0" layoutY="298.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="39.0" text="OK" />
+      <TextArea layoutX="14.0" layoutY="45.0" prefHeight="242.0" prefWidth="200.0" text="ID : Manufacturer Name&#10;&#10;1:    NVIDIA&#10;2:    AMD&#10;3:    PALIT&#10;4:    MSI  &#10;5:    GIGABYTE&#10;6:    ASUS&#10;7:    EVGA&#10;8:    SAPPHIRE&#10;9:    ZOTAC">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>

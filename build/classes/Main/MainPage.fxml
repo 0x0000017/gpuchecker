@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="1148.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.FXMLDocumentController">
+   <children>
+      <Pane layoutX="-3.0" prefHeight="466.0" prefWidth="209.0" styleClass="pane" stylesheets="@SideButton.css">
+         <children>
+            <Button fx:id="btnHome" alignment="BASELINE_LEFT" layoutX="3.0" layoutY="142.0" mnemonicParsing="false" onAction="#showHome" prefHeight="37.0" prefWidth="206.0" text="Home" textFill="#948f8f">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/home1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnAdd" alignment="BASELINE_LEFT" layoutY="196.0" mnemonicParsing="false" onAction="#showItemTable" prefHeight="45.0" prefWidth="209.0" text="Add Items" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/additems.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnEdit" alignment="BASELINE_LEFT" layoutX="3.0" layoutY="250.0" mnemonicParsing="false" onAction="#showManTable" prefHeight="48.0" prefWidth="206.0" text="Manufacturer" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/manu1.png" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Line endX="100.0" layoutX="208.0" layoutY="236.0" rotate="90.0" scaleX="2.4" startX="-100.0" stroke="#807a7a" strokeLineCap="ROUND" strokeLineJoin="BEVEL" />
+            <ImageView fitHeight="136.0" fitWidth="206.0" layoutX="2.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Icons/logo1trans.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="home_pane" layoutX="206.0" prefHeight="466.0" prefWidth="943.0" styleClass="pane" stylesheets="@Button.css">
+         <children>
+            <ImageView fitHeight="466.0" fitWidth="943.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Icons/background.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="man_pane" layoutX="206.0" prefHeight="466.0" prefWidth="943.0" styleClass="pane" stylesheets="@Button.css">
+         <children>
+            <TableView fx:id="manTableView" layoutX="72.0" layoutY="39.0" onMouseClicked="#selectManTable" prefHeight="387.0" prefWidth="321.0">
+              <columns>
+                <TableColumn fx:id="manId" prefWidth="70.0" text="ID" />
+                <TableColumn fx:id="manName" prefWidth="250.0" text="Manufacturer Name" />
+              </columns>
+            </TableView>
+            <Button fx:id="manAdd" layoutX="413.0" layoutY="260.0" mnemonicParsing="false" onAction="#addMan" prefHeight="31.0" prefWidth="76.0" text="Add" textFill="WHITE" />
+            <Button fx:id="manUpdate" layoutX="496.0" layoutY="260.0" mnemonicParsing="false" onAction="#updateMan" prefHeight="31.0" prefWidth="76.0" text="Update" textFill="WHITE" />
+            <Button fx:id="manDelete" layoutX="578.0" layoutY="260.0" mnemonicParsing="false" onAction="#deleteMan" prefHeight="31.0" prefWidth="76.0" text="Delete" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="buttondelete" />
+                  <String fx:value="buttondelete2" />
+               </styleClass>
+            </Button>
+            <Button fx:id="manRefresh" layoutX="317.0" layoutY="429.0" mnemonicParsing="false" onAction="#loadManTable" prefHeight="31.0" prefWidth="76.0" text="Refresh" textFill="WHITE" />
+            <Label layoutX="414.0" layoutY="192.0" text="Manufacturer Name:" />
+            <TextField fx:id="manTextField" layoutX="412.0" layoutY="219.0" prefHeight="25.0" prefWidth="242.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="item_pane" layoutX="206.0" prefHeight="466.0" prefWidth="943.0" styleClass="pane" stylesheets="@Button.css" visible="false">
+         <children>
+            <TableView fx:id="tableView" layoutX="13.0" layoutY="66.0" onMouseClicked="#selectData" prefHeight="360.0" prefWidth="623.0">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="colName" prefWidth="138.0" text="Item Name" />
+                  <TableColumn fx:id="colQuantity" prefWidth="68.0" text="Quantity" />
+                  <TableColumn fx:id="colPrice" prefWidth="63.0" text="Price" />
+                  <TableColumn fx:id="colMemory" prefWidth="85.0" text="Memory" />
+                  <TableColumn fx:id="colVendor" prefWidth="118.0" text="Manufacturer" />
+                  <TableColumn fx:id="colVendorID" prefWidth="100.0" text="Manufacturer ID" />
+              </columns>
+            </TableView>
+            <TextField fx:id="textFieldOne" layoutX="648.0" layoutY="92.0" prefHeight="25.0" prefWidth="278.0" />
+            <TextField fx:id="textFieldTwo" layoutX="649.0" layoutY="152.0" prefHeight="25.0" prefWidth="278.0" />
+            <TextField fx:id="textFieldThree" layoutX="648.0" layoutY="212.0" prefHeight="25.0" prefWidth="278.0" />
+            <TextField fx:id="textFieldFour" layoutX="648.0" layoutY="272.0" prefHeight="25.0" prefWidth="278.0" />
+            <TextField fx:id="textFieldFive" layoutX="648.0" layoutY="332.0" prefHeight="25.0" prefWidth="278.0" />
+            <Label layoutX="652.0" layoutY="306.0" text="Manufacturer ID" textFill="#111111" />
+            <Label layoutX="652.0" layoutY="246.0" prefHeight="17.0" prefWidth="94.0" text="Memory (in GB)" textFill="#111111" />
+            <Label layoutX="653.0" layoutY="127.0" prefHeight="17.0" prefWidth="76.0" text="Quantity" textFill="#111111" />
+            <Label layoutX="652.0" layoutY="66.0" text="Product Name" textFill="#111111" />
+            <Label layoutX="652.0" layoutY="186.0" prefHeight="17.0" prefWidth="87.0" text="Price (in PHP)" textFill="#111111" />
+            <Button fx:id="add" layoutX="676.0" layoutY="428.0" mnemonicParsing="false" onAction="#addRecord" prefHeight="31.0" prefWidth="76.0" text="Add" textFill="WHITE" />
+            <Button fx:id="updateRecord" layoutX="763.0" layoutY="428.0" mnemonicParsing="false" onAction="#updateData" prefHeight="31.0" prefWidth="76.0" text="Update" textFill="WHITE" />
+            <Button fx:id="deleteRecord" layoutX="850.0" layoutY="428.0" mnemonicParsing="false" onAction="#deleteRecord" prefHeight="31.0" prefWidth="76.0" text="Delete" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="buttondelete" />
+                  <String fx:value="buttondelete2" />
+               </styleClass>
+            </Button>
+            <Button fx:id="reloadButton" layoutX="560.0" layoutY="428.0" mnemonicParsing="false" onAction="#loadTable" prefHeight="31.0" prefWidth="76.0" text="Refresh" textFill="WHITE" />
+            <TextField fx:id="searchField" layoutX="13.0" layoutY="33.0" prefHeight="25.0" prefWidth="537.0" />
+            <Button fx:id="searchButton" layoutX="556.0" layoutY="30.0" mnemonicParsing="false" onAction="#searchRecords" prefHeight="31.0" prefWidth="76.0" text="Search" textFill="WHITE" />
+            <Label fx:id="dbStatusLabel" layoutX="13.0" layoutY="433.0" text="Status: " />
+            <Label fx:id="dbStatusText" layoutX="50.0" layoutY="433.0" prefHeight="17.0" prefWidth="321.0" text="Waiting" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,27 @@
+.pane{
+    -fx-background-color:  #efefef;
+}
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "System";
+    /*-fx-font-size: 12px;*/
+    -fx-font-weight: bold;
+    -fx-background-color:  #1e88e5;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: #005cb2;
+}
+
+.buttondelete{
+    -fx-text-fill: white;
+    -fx-font-family: "System";
+    -fx-font-weight: bold;
+    -fx-background-color:   #e53935;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.buttondelete2:hover{
+    -fx-background-color: #ab000d;
+}
